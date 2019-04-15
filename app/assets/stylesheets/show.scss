@@ -1,0 +1,55 @@
+@import "global.scss"; // Extended
+// Styles
+
+.show-card {
+  @extend %box;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: -10px;
+  }
+}
+
+h2.card-title {
+  color: $yellow;
+  margin-bottom: 20px;
+}
+
+.body {
+
+p {
+    color: $green;
+    margin-bottom: 10px;
+  }
+}
+
+.score {
+  @extend %diamond-sm;
+  @extend %flex-v-center;
+  margin: 20px auto;
+
+  p {
+    @extend %pop;
+    pointer-events: none;
+  }
+}
+
+.actions {
+  margin-top: 50px;
+  @extend %flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  a {
+    @extend %copyRegular;
+    color: $yellow;
+    font-size: 16px;
+    opacity: 0.7;
+    @include transform(0.2s);
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

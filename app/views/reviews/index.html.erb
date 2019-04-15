@@ -1,7 +1,18 @@
+<nav>
+  <li class="diamond-lg center"><%= link_to "Add a review!", new_review_path %></li>
+</nav>
+
 <% @reviews.each do |review| %>
 
   <div class="review">
-    <%= link_to review.title, review_path(review) %>
+    <div class="restaurant half">
+      <h2>Restaurant</h2>
+      <p class="large"><%= link_to review.restaurant, review_path(review) %></p>
+    </div>
+    <div class="cuisine half">
+      <h2>Cuisine</h2>
+      <p class="large"><%= link_to review.cuisine, review_path(review) %></p>
+    </div>
   </div>
 
 <% end %>

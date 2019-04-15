@@ -1,0 +1,29 @@
+@import "global.scss"; // Extended
+
+// Index start
+nav {
+  .diamond-lg {
+  @extend %diamond-lg;
+  @extend %flex-v-center;
+  margin-bottom: 50px;
+}
+  a {
+    @extend %pop;
+    padding: 30px;
+  }
+}
+
+.review {
+  @extend %box;
+  @extend %flex-v-center;
+  padding: 0;
+  height: 125px;
+  @include transform(0.5s);
+  a {
+    color: $yellow;
+        padding: 30px 20px;
+  }
+  &:hover {
+    background-color: #10495C;
+  }
+}

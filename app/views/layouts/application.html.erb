@@ -12,24 +12,24 @@
   <body>
     <header>
 
-      <h1>
-        <%= link_to root_path do %>
+      <div class="logo center">
+        <h1>
+          <%= link_to root_path do %>
           <%= image_tag "bien-logo.svg" %>
         <% end %>
       </h1>
+    </div>
+    <div class="tagline center">
+      <p>The best restaurant reviews in the world</p>
+    </div>
 
-      <h2>The best restaurant reviws in the world</h2>
+  </header>
 
-      <nav>
-        <p><%= link_to "Add a review", new_review_path %></p>
-      </nav>
-    </header>
+  <%= yield %>
 
-    <%= yield %>
+  <footer>
+    <p class="small">Copyright&copy; 2019</p>
+  </footer>
 
-    <footer>
-      <p>Copyright 2019</p>
-    </footer>
-
-  </body>
+</body>
 </html>

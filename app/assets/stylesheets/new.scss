@@ -1,0 +1,45 @@
+@import "global.scss"; // Extended
+// Styles
+
+.new-form {
+  @extend %box;
+}
+
+p {
+  border-radius: 5%;
+}
+
+.about {
+  @extend %flex-v-center;
+
+  h2 {
+    width: 100%;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.score-input {
+  width: 100px;
+  text-align: center;
+  margin-right: -10px;
+}
+
+.submit {
+  @extend %diamond-sm;
+  @extend %flex-v-center;
+
+  input.submit-button {
+    @extend %pop;
+
+    &:hover {
+      background-color: $yellow;
+    }
+  }
+}
+
+p.submit {
+  margin-top: 20px;
+}
