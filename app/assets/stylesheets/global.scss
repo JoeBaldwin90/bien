@@ -121,6 +121,9 @@ $bodyFont: "Work Sans"; // Extended font styles
   border: none;
   list-style: none;
   text-decoration: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .center {
