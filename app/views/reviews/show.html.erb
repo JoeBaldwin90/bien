@@ -1,23 +1,29 @@
 <% content_for :page_title, @review.title  + " - "  %>
 
-<div class="show-card">
+  <div class="show-card">
 
-<h1><%= @review.restaurant %></h1>
+    <h1><%= @review.restaurant %></h1>
 
-<h2><%= @review.cuisine %></h2>
+    <h2><%= @review.cuisine %></h2>
 
+    <div class="score">
+      <p><%= @review.score %>
+        / 10</p>
+    </div>
+    <h2 class="card-title"><%= @review.title %></h2>
+    <div class="body">
+      <%= simple_format @review.body %>
+    </div>
 
-<div class="score">
-  <p><%= @review.score %> / 10</p>
-</div>
-<h2 class="card-title"><%= @review.title %></h2>
-<div class="body">
-  <%= simple_format @review.body %>
-</div>
+    <% if @review.ambiance.present? %>
+      <div class="ambiance">
+        Ambiance: <%= simple_format @review.ambiance %>
+      </div>
+    <% end %>
 
-<div class="actions">
-  <p class="modify"><%= link_to "Edit this review", edit_review_path(@review) %></p>
-  <p class="modify"><%= link_to "Delete this review", review_path(@review), method: :delete, data: { confirm: "Are you sure??" } %></p>
-</div>
+    <div class="actions">
+      <p class="modify"><%= link_to "Edit this review", edit_review_path(@review) %></p>
+      <p class="modify"><%= link_to "Delete this review", review_path(@review), method: :delete, data: { confirm: "Are you sure??" } %></p>
+    </div>
 
-</div>
+  </div>
