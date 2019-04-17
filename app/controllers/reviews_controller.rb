@@ -1,8 +1,16 @@
 class ReviewsController < ApplicationController
 
   def index
-    # this is our list page for our reviews
-    @reviews = Review.all
+    # Add a filter for price
+    @price = params[:price]
+
+    if @price.present?
+      # Model is capitalised and singular
+      @reviews = Review.where(price: @price)
+    else
+      @reviews = Review.all
+    end
+
   end
 
   def new

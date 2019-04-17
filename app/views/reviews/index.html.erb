@@ -1,7 +1,18 @@
+<!-- Add review button -->
 <nav class="add-review">
   <li class="diamond-lg center"><%= link_to "Add a review!", new_review_path %></li>
 </nav>
+<!-- Filters -->
+<nav class="filters">
+  <%= link_to "All prices", root_path %>
+  <%= link_to "£", root_path(price: 1) %>
+  <%= link_to "££", root_path(price: 2) %>
+  <%= link_to "£££", root_path(price: 3) %>
+  <%= link_to "££££", root_path(price: 4) %>
+  <%= link_to "£££££", root_path(price: 5) %>
+</nav>
 
+<!-- Reviews -->
 <% @reviews.each do |review| %>
 
   <div class="review">
