@@ -12,20 +12,23 @@
   <body>
     <header>
 
-      <div class="logo center">
+      <nav class="logo center">
         <h1>
           <%= link_to root_path do %>
           <%= image_tag "bien-logo.svg" %>
         <% end %>
       </h1>
-    </div>
+    </nav>
     <div class="tagline center">
       <p>The best restaurant reviews in the world</p>
     </div>
 
   </header>
 
+<main>
   <%= yield %>
+</main>
+
 
   <footer>
     <p class="small">Copyright&copy; 2019</p>
