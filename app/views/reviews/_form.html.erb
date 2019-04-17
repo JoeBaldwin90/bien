@@ -1,37 +1,49 @@
 <%= form_for @review do |f| %>
 
+<% if @review.errors.any? %>
+
+  <div class="errors">
+    <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+
+<% end %>
+
 <div class="new-form">
 
   <div class="about">
     <div class="about half">
       <h2><%= f.label :restaurant %></h2>
       <p class="large">
-        <%= f.text_field :restaurant, placeholder: "Restaurant name", :maxlength => 25,:required => true %>
+        <%= f.text_field :restaurant, placeholder: "Restaurant name", :maxlength => 25 %>
       </p>
     </div>
     <div class="about half">
       <h2><%= f.label :cuisine %></h2>
       <p class="large">
-        <%= f.text_field :cuisine, placeholder: "Cuisine type", :maxlength => 20,:required => true %>
+        <%= f.text_field :cuisine, placeholder: "Cuisine type", :maxlength => 20 %>
       </p>
     </div>
   </div>
 
   <div>
     <h2><%= f.label :title %></h2>
-    <p><%= f.text_field :title, placeholder: "Review title", :required => true %></p>
+    <p><%= f.text_field :title, placeholder: "Review title" %></p>
   </div>
   <div>
     <h2><%= f.label :body %></h2>
-    <p><%= f.text_area :body, size: "30x10", placeholder: "Type your full review",:required => true %></p>
+    <p><%= f.text_area :body, size: "30x10", placeholder: "Type your full review" %></p>
   </div>
   <div>
     <h2><%= f.label :score %></h2>
-    <p><%= f.number_field :score, placeholder: "10", class: 'score-input', :required => true %></p>
+    <p><%= f.number_field :score, placeholder: "10", class: "score-input" %></p>
   </div>
   <div>
     <p class="submit center">
-      <%= f.submit "Save review", class: 'submit-button' %>
+      <%= f.submit "Save review", class: "submit-button" %>
     </p>
   </div>
 
