@@ -42,6 +42,10 @@
     <p><%= f.text_field :ambiance, placeholder: "e.g. Buzzing" %></p>
   </div>
   <div>
+    <h2><%= f.label :price %></h2>
+    <p><%= f.number_field :price, placeholder: "5" %> / 5</p>
+  </div>
+  <div>
     <h2><%= f.label :score %></h2>
     <p><%= f.number_field :score, placeholder: "10", class: "score-input" %></p>
   </div>

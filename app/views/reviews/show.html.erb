@@ -21,6 +21,12 @@
       </div>
     <% end %>
 
+    <% if @review.price.present? %>
+      <div class="price">
+        Price: <%= @review.price %> / 5
+      </div>
+    <% end %>
+
     <div class="actions">
       <p class="modify"><%= link_to "Edit this review", edit_review_path(@review) %></p>
       <p class="modify"><%= link_to "Delete this review", review_path(@review), method: :delete, data: { confirm: "Are you sure??" } %></p>
