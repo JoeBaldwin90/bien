@@ -1,14 +1,21 @@
 class ReviewsController < ApplicationController
 
   def index
-    # Add a filter for price
+    # Add a filter for price & cuisine
     @price = params[:price]
+    @cuisine = params[:cuisine]
 
+    # Start with all Reviews
+    @reviews = Review.all
+
+    # Filter by price
     if @price.present?
-      # Model is capitalised and singular
-      @reviews = Review.where(price: @price)
-    else
-      @reviews = Review.all
+      @reviews = @reviews.where(price: @price) # @price is the variable parameter
+    end
+
+    # Filter by cuisine
+    if @cuisine.present?
+      @reviews = @reviews.where(cuisine: @cuisine) # @price is the variable parameter
     end
 
   end
