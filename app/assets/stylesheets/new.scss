@@ -1,45 +1,54 @@
 @import "global.scss"; // Extended
 // Styles
 
-.new-form {
+.new_review {
   @extend %box;
-}
 
-p {
-  border-radius: 5%;
-}
-
-.about {
-  @extend %flex-v-center;
-
-  h2 {
-    width: 100%;
+  label {
+    display: block;
+    @extend %pageTitle;
   }
 
-  p {
+  input {
+    @extend %copyRegular;
     margin-bottom: 20px;
   }
-}
 
-.score-input {
-  width: 100px;
-  text-align: center;
-  margin-right: -10px;
-}
+  input.numeric {
+    width: 100px;
+    text-align: center;
+    margin-right: -10px;
+  }
 
-.submit {
-  @extend %diamond-sm;
-  @extend %flex-v-center;
+  #review_body,
+  #review_address {
+    width: 600px;
+  }
 
-  input.submit-button {
-    @extend %pop;
+  #review_body {
+    height: 250px;
+  }
 
-    &:hover {
-      background-color: $yellow;
+  .radio {
+    display: inline-block;
+    margin-right: 10px;
+
+    input {
+      margin-right: 5px;
+    }
+    label {
+      @extend %copyRegular;
     }
   }
 }
 
-p.submit {
-  margin-top: 20px;
+.btn.submit-button {
+  @extend %diamond-sm;
+  @extend %flex-v-center;
+  @extend %pop;
+  margin: 10px auto;
+
+  &:hover {
+    background-color: $yellow;
+  }
 }

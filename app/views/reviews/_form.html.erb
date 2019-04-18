@@ -13,67 +13,16 @@
 <% end %>
 
 <%= simple_form_for @review do |f| %>
-  <%= f.input :title %>
   <%= f.input :restaurant, placeholder: "Restaurant name", :maxlength => 25 %>
   <%= f.input :address %>
-  <%= f.input :body %>
-  <%= f.input :cuisine %>
-  <%= f.input :price %>
-  <%= f.input :score %>
-  <%= f.input :ambiance %>
-  <%= f.button :submit %>
+  <%= f.input :title, placeholder: "Review title" %>
+  <%= f.input :body, size: "70x40", placeholder: "Type your full review"%>
+  <%= f.input :cuisine, placeholder: "Cuisine type", :maxlength => 20%>
+  <%= f.input :price, as: :radio_buttons, collection: [['£', '£'], ['££', '££'], ['£££', '£££']], label_method: :first, value_method: :second %>
+  <%= f.input :score, placeholder: "0-10", class: "score-input" %>
+  <%= f.input :ambiance, placeholder: "e.g. Buzzing" %>
+  <%= f.button :submit, class: "submit-button", value: "Save Review" %>
 <% end %>
 
-<!-- <div class="new-form">
-
-  <div class="about">
-    <div class="about half">
-      <h2><%= f.label :restaurant %></h2>
-      <p class="large">
-        <%= f.text_field :restaurant, placeholder: "Restaurant name", :maxlength => 25 %>
-      </p>
-      <p class="small">
-        <%= f.text_field :address, placeholder: "Address" %>
-      </p>
-    </div>
-    <div class="about half">
-      <h2><%= f.label :cuisine %></h2>
-      <p class="large">
-        <%= f.text_field :cuisine, placeholder: "Cuisine type", :maxlength => 20 %>
-      </p>
-    </div>
-  </div>
-
-  <div>
-    <h2><%= f.label :title %></h2>
-    <p><%= f.text_field :title, placeholder: "Review title" %></p>
-  </div>
-  <div>
-    <h2><%= f.label :body %></h2>
-    <p><%= f.text_area :body, size: "30x10", placeholder: "Type your full review" %></p>
-  </div>
-  <div>
-    <h2><%= f.label :ambiance %></h2>
-    <p><%= f.text_field :ambiance, placeholder: "e.g. Buzzing" %></p>
-  </div>
-  <div>
-    <h2><%= f.label :price %></h2>
-    <p>
-      <span>£ <%= f.radio_button :price, "£" %></span>
-      <span>££ <%= f.radio_button :price, "££" %></span>
-      <span>£££ <%= f.radio_button :price, "£££" %></span>
-    </p>
-  </div>
-  <div>
-    <h2><%= f.label :score %></h2>
-    <p><%= f.number_field :score, placeholder: "10", class: "score-input" %></p>
-  </div>
-  <div>
-    <p class="submit center">
-      <%= f.submit "Save review", class: "submit-button" %>
-    </p>
-  </div>
-
-</div> -->
 
 <% end %>
