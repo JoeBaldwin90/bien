@@ -43,7 +43,11 @@
   </div>
   <div>
     <h2><%= f.label :price %></h2>
-    <p><%= f.number_field :price, placeholder: "5" %> / 5</p>
+    <p>
+      <span>£ <%= f.radio_button :price, 1 %></span>
+      <span>££ <%= f.radio_button :price, 2 %></span>
+      <span>£££ <%= f.radio_button :price, 3 %></span>
+    </p>
   </div>
   <div>
     <h2><%= f.label :score %></h2>
