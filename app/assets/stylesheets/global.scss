@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500'); // Colours
-
 // Variables
 $blue: #1B5A75;
 $teal: #247BA0;
@@ -9,7 +8,6 @@ $yellow: #F3FFBD;
 $red: #FF1654;
 $titleFont: "PT Sans";
 $bodyFont: "Work Sans"; // Extended font styles
-
 // Mix-in's
 @mixin elSize($width, $height) {
   width: $width;
@@ -19,7 +17,6 @@ $bodyFont: "Work Sans"; // Extended font styles
   -webkit-transition: all $time ease;
   transition: all $time ease;
 }
-
 
 %pageTitle {
   font-family: $titleFont, sans-serif;
@@ -67,6 +64,7 @@ $bodyFont: "Work Sans"; // Extended font styles
   }
 }
 // Extended display Styles
+
 %flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,6 +111,7 @@ $bodyFont: "Work Sans"; // Extended font styles
   box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.25);
 }
 // Styles
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -121,6 +120,7 @@ $bodyFont: "Work Sans"; // Extended font styles
   border: none;
   list-style: none;
   text-decoration: none;
+
   &:focus {
     outline: none;
   }
@@ -152,6 +152,14 @@ h2 {
 h2.glow {
   @extend %pageTitle;
   color: $lightGreen;
+}
+
+a {
+  color: $green;
+
+  &.active {
+    color: $red;
+  }
 }
 
 p {
@@ -189,6 +197,7 @@ footer {
   margin-top: 50px;
 }
 // Input Styles
+
 input,
 textarea {
   @extend %copyRegular;

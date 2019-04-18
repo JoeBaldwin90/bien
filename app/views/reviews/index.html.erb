@@ -4,22 +4,20 @@
 </nav>
 <!-- Filters -->
 <nav class="filters">
-  <%= link_to "All prices", root_path %>
+  <%= active_link_to "All prices", root_path, active: { price: ""} %>
   <!-- Variables are coming from the params defined in the controller -->
   <!-- When we select price, we can then filter price by cuisine type -->
-  <%= link_to "£", root_path(price: "£", cuisine: @cuisine, location: @location) %>
-  <%= link_to "££", root_path(price: "££", cuisine: @cuisine, location: @location) %>
-  <%= link_to "£££", root_path(price: "£££", cuisine: @cuisine, location: @location) %>
+  <%= active_link_to "£", root_path(price: "£", cuisine: @cuisine, location: @location), active: { price: "£" } %>
+  <%= active_link_to "££", root_path(price: "££", cuisine: @cuisine, location: @location), active: { price: "££" } %>
+  <%= active_link_to "£££", root_path(price: "£££", cuisine: @cuisine, location: @location), active: { price: "£££" } %>
 </nav>
 
 <!-- Cuisine -->
 <nav class="cuisine">
   <!-- When we select cuisine type, we can then filter by price -->
-  <%= link_to "Indian", root_path(cuisine: "Indian", price: @price, location: @location) %>
-  <%= link_to "Coffee", root_path(cuisine: "Coffee", price: @price, location: @location) %>
-  <%= link_to "Pizza", root_path(cuisine: "Pizza", price: @price, location: @location) %>
-  <%= link_to "Burger", root_path(cuisine: "Burger", price: @price, location: @location) %>
-  <%= link_to "Fish & Chips", root_path(cuisine: "Fish & Chips", price: @price, location: @location) %>
+  <%= active_link_to "Indian", root_path(cuisine: "Indian", price: @price, location: @location), active: { cuisine: "Indian" }  %>
+  <%= active_link_to "Pizza", root_path(cuisine: "Pizza", price: @price, location: @location), active: { cuisine: "Pizza" }  %>
+  <%= active_link_to "Burger", root_path(cuisine: "Burger", price: @price, location: @location), active: { cuisine: "Burger" }  %>
 </nav>
 
 <!-- Location -->

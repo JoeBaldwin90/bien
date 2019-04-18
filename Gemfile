@@ -36,6 +36,9 @@ gem "geocoder"
 # Add Simple Form
 gem "simple_form"
 
+# Add active link (removes need for lots of if statements)
+gem 'active_link_to'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
