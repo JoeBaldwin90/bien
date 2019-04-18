@@ -1,14 +1,15 @@
 class ReviewsController < ApplicationController
 
   def index
-    # Add a filter for price & cuisine
+    # Add a filters for price, cuisine & location.
+    # This can be done in the URL e.g. "..:3000/location=London"
     @price = params[:price]
     @cuisine = params[:cuisine]
-
+    @location = params[:location]
     # Start with all Reviews
     @reviews = Review.all
 
-    # Filter by price
+    # Filter results by price
     if @price.present?
       @reviews = @reviews.where(price: @price) # @price is the variable parameter
     end
@@ -16,6 +17,12 @@ class ReviewsController < ApplicationController
     # Filter by cuisine
     if @cuisine.present?
       @reviews = @reviews.where(cuisine: @cuisine) # @price is the variable parameter
+    end
+
+    # Search near location
+
+    if @location.present?
+      @reviews = @reviews.near(@location)
     end
 
   end
@@ -73,7 +80,7 @@ class ReviewsController < ApplicationController
   end
 
   def form_params
-    params.require(:review).permit(:title, :body, :score, :restaurant, :cuisine, :ambiance, :price)
+    params.require(:review).permit(:title, :body, :score, :restaurant, :cuisine, :ambiance, :price, :address)
   end
 
 end

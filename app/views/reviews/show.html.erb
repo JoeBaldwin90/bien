@@ -4,6 +4,10 @@
 
     <h1><%= @review.restaurant %></h1>
 
+    <% if @review.address.present? %>
+      <%= simple_format @review.address %>
+    <% end %>
+
     <h2><%= @review.cuisine %></h2>
 
     <div class="score">
@@ -16,14 +20,12 @@
     </div>
 
     <% if @review.ambiance.present? %>
-      <div class="ambiance">
-        Ambiance: <%= simple_format @review.ambiance %>
-      </div>
+        Ambiance: <%= @review.ambiance %>
     <% end %>
 
     <% if @review.price.present? %>
       <div class="price">
-        Price: <%= @review.price %> / 5
+        Price: <%= @review.price %> / £££
       </div>
     <% end %>
 

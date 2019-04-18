@@ -20,6 +20,9 @@
       <p class="large">
         <%= f.text_field :restaurant, placeholder: "Restaurant name", :maxlength => 25 %>
       </p>
+      <p class="small">
+        <%= f.text_field :address, placeholder: "Address" %>
+      </p>
     </div>
     <div class="about half">
       <h2><%= f.label :cuisine %></h2>
@@ -44,9 +47,9 @@
   <div>
     <h2><%= f.label :price %></h2>
     <p>
-      <span>£ <%= f.radio_button :price, 1 %></span>
-      <span>££ <%= f.radio_button :price, 2 %></span>
-      <span>£££ <%= f.radio_button :price, 3 %></span>
+      <span>£ <%= f.radio_button :price, "£" %></span>
+      <span>££ <%= f.radio_button :price, "££" %></span>
+      <span>£££ <%= f.radio_button :price, "£££" %></span>
     </p>
   </div>
   <div>
