@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Add in Geocoding
 gem "geocoder"
 
+# Add Simple Form
+gem "simple_form"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

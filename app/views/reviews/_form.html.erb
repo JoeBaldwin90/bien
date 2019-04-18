@@ -12,7 +12,19 @@
 
 <% end %>
 
-<div class="new-form">
+<%= simple_form_for @review do |f| %>
+  <%= f.input :title %>
+  <%= f.input :restaurant, placeholder: "Restaurant name", :maxlength => 25 %>
+  <%= f.input :address %>
+  <%= f.input :body %>
+  <%= f.input :cuisine %>
+  <%= f.input :price %>
+  <%= f.input :score %>
+  <%= f.input :ambiance %>
+  <%= f.button :submit %>
+<% end %>
+
+<!-- <div class="new-form">
 
   <div class="about">
     <div class="about half">
@@ -62,6 +74,6 @@
     </p>
   </div>
 
-</div>
+</div> -->
 
 <% end %>
