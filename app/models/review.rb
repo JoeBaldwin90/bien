@@ -2,9 +2,10 @@
 
 class Review < ApplicationRecord
 
+  has_many :comments
+
   geocoded_by :address
   after_validation :geocode
-
 
   validates :restaurant, presence: true
   validates :title, presence: true #this is a hash, also valid is { presence: true }

@@ -1,12 +1,12 @@
 @import "global.scss"; // Extended
-
 // Index start
 nav.add-review {
   .diamond-lg {
-  @extend %diamond-lg;
-  @extend %flex-v-center;
-  margin-bottom: 50px;
-}
+    @extend %diamond-lg;
+    @extend %flex-v-center;
+    margin-bottom: 50px;
+  }
+
   a {
     @extend %pop;
     padding: 30px;
@@ -19,16 +19,29 @@ nav.add-review {
   padding: 0;
   height: 125px;
   @include transform(0.5s);
+
   a {
     color: $yellow;
-        padding: 30px 20px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
+
   &:hover {
     background-color: #10495C;
+  }
+
+  .counter {
+    opacity: 0.5;
+    font-size: 12px;
+    margin: -15px auto;
   }
 }
 
 .location input {
   background: #00000047;
-    padding: 5px;
+  padding: 5px;
 }

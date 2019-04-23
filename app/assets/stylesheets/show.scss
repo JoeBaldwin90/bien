@@ -17,8 +17,7 @@ h2.card-title {
 }
 
 .body {
-
-p {
+  p {
     color: $green;
     margin-bottom: 10px;
   }
@@ -48,8 +47,29 @@ p {
     font-size: 16px;
     opacity: 0.7;
     @include transform(0.2s);
+
     &:hover {
       opacity: 1;
     }
+  }
+}
+
+.comment {
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  padding: 10px;
+  text-align: left;
+  border-left: 2px solid $green;
+
+  p {
+    font-size: 16px;
+    color: $yellow;
+  }
+
+  .posted {
+    font-size: 12px;
+    text-align: right;
+    opacity: 0.5;
   }
 }

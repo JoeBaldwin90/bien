@@ -20,7 +20,6 @@ class ReviewsController < ApplicationController
     end
 
     # Search near location
-
     if @location.present?
       @reviews = @reviews.near(@location)
     end
@@ -42,10 +41,10 @@ class ReviewsController < ApplicationController
   if @review.save
     # If the form data passes the validation checks on our review.db model, redirect to homepage.
     redirect_to root_path
-  else
+    else
     # Else show the view for new.html.erb (the form)
-    render "new"
-  end
+      render "new"
+    end
 
   end
 
