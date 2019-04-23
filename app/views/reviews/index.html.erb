@@ -3,30 +3,35 @@
   <li class="diamond-lg center"><%= link_to "Add a review!", new_review_path %></li>
 </nav>
 <!-- Filters -->
+<h2>Filter by</h2>
 <nav class="filters">
-  <%= active_link_to "All prices", root_path, active: { price: nil, cuisine: nil, location: nil} %>
-  <!-- Variables are coming from the params defined in the controller -->
-  <!-- When we select price, we can then filter price by cuisine type -->
-  <%= active_link_to "£", root_path(price: "£", cuisine: @cuisine, location: @location), active: { price: "£" } %>
-  <%= active_link_to "££", root_path(price: "££", cuisine: @cuisine, location: @location), active: { price: "££" } %>
-  <%= active_link_to "£££", root_path(price: "£££", cuisine: @cuisine, location: @location), active: { price: "£££" } %>
-</nav>
+  <ul>
+    <p class="small">Price</p>
+    <!-- Variables are coming from the params defined in the controller -->
+    <!-- When we select price, we can then filter price by cuisine type -->
+    <li><%= active_link_to "All", root_path, active: { price: nil, cuisine: nil, location: nil} %></li>
+    <li><%= active_link_to "£", root_path(price: "£", cuisine: @cuisine, location: @location), active: { price: "£" } %></li>
+    <li><%= active_link_to "££", root_path(price: "££", cuisine: @cuisine, location: @location), active: { price: "££" } %></li>
+    <li><%= active_link_to "£££", root_path(price: "£££", cuisine: @cuisine, location: @location), active: { price: "£££" } %></li>
+    </ul>
 
-<!-- Cuisine -->
-<nav class="cuisine">
-  <!-- When we select cuisine type, we can then filter by price -->
-  <%= active_link_to "Indian", root_path(cuisine: "Indian", price: @price, location: @location), active: { cuisine: "Indian" } %>
-  <%= active_link_to "Pizza", root_path(cuisine: "Pizza", price: @price, location: @location), active: { cuisine: "Pizza" } %>
-  <%= active_link_to "Burger", root_path(cuisine: "Burger", price: @price, location: @location), active: { cuisine: "Burger" } %>
-</nav>
+    <!-- Location -->
+    <form action="/" class="location">
+      <p class="small">Location</p>
+      <input type="text" name="location" placeholder="e.g. London" value="<%= @location %>" class="">
+      <input type="hidden" name="price" value="<%= @price %>">
+      <input type="hidden" name="cuisine" value="<%= @cuisine %>">
+    </form>
 
-<!-- Location -->
-<form action="/" class="location">
-  <p>Search Location</p>
-  <input type="text" name="location" placeholder="e.g. London" value="<%= @location %>">
-  <input type="hidden" name="price" value="<%= @price %>">
-  <input type="hidden" name="cuisine" value="<%= @cuisine %>">
-</form>
+    <!-- Cuisine -->
+    <ul class="cuisine">
+      <p class="small">Cuisine</p>
+      <!-- When we select cuisine type, we can then filter by price -->
+      <%= active_link_to "Burger", root_path(cuisine: "Burger", price: @price, location: @location), active: { cuisine: "Burger" } %>
+      <%= active_link_to "Pizza", root_path(cuisine: "Pizza", price: @price, location: @location), active: { cuisine: "Pizza" } %>
+      <%= active_link_to "Pub Grub", root_path(cuisine: "Pub Grub", price: @price, location: @location), active: { cuisine: "Pub Grub" } %>
+    </ul>
+</nav>
 
 <!-- Reviews -->
 <% @reviews.each do |review| %>

@@ -47,6 +47,12 @@ $bodyFont: "Work Sans"; // Extended font styles
   font-weight: 300;
 }
 
+%copySmall {
+  font-family: $bodyFont, sans-serif;
+  color: $yellow;
+  font-size: 16px;
+}
+
 %pop {
   color: $red;
   text-transform: uppercase;
@@ -143,6 +149,7 @@ body {
 
 h1 {
   @extend %pageTitle-lg;
+  line-height: 1;
 }
 
 h2 {
@@ -157,6 +164,7 @@ h2.glow {
 h3 {
   @extend %pageTitle;
   font-size: 20px;
+  margin: 25px auto;
 }
 
 a {
@@ -176,8 +184,7 @@ p.large {
 }
 
 p.small {
-  font-size: 10px;
-  color: rgba(255,255,255,0.3);
+  @extend %copySmall;
 }
 
 .logo {

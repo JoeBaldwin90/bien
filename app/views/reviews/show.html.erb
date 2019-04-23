@@ -19,18 +19,26 @@
       <%= simple_format @review.body %>
     </div>
 
-    <% if @review.ambiance.present? %>
-      Ambiance:
-      <%= @review.ambiance %>
-    <% end %>
-
-    <% if @review.price.present? %>
-      <div class="price">
-        Price:
-        <%= @review.price %>
-        / £££
+    <div class="qualities">
+      <div class="ambiance half">
+        <% if @review.ambiance.present? %>
+          <p>Ambiance:</p>
+          <p><%= @review.ambiance %></p>
+        <% end %>
       </div>
-    <% end %>
+
+      <div class="price half">
+        <% if @review.price.present? %>
+          <div class="price">
+            <p>Price:</p>
+            <p><%= @review.price %>
+            / £££</p>
+          </div>
+        <% end %>
+      </div>
+
+
+    </div>
 
     <div class="actions">
       <p class="modify"><%= link_to "Edit this review", edit_review_path(@review) %></p>
@@ -39,18 +47,23 @@
 
   </div>
 
-  <h3>Comments</h3>
-  <% @review.comments.order("created_at desc").each do |comment| %>
+  <% if @review.comments.present? %>
+    <h3>Comments</h3>
 
-    <div class="comment">
-      <%= simple_format comment.body %>
-      <p class="posted">Posted <%= time_ago_in_words comment.created_at %> ago</p>
-    </div>
+    <% @review.comments.order("created_at desc").each do |comment| %>
 
+      <div class="comment">
+        <%= simple_format comment.body %>
+        <p class="posted">Posted
+          <%= time_ago_in_words comment.created_at %>
+          ago</p>
+      </div>
+
+    <% end %>
   <% end %>
 
   <h3>Add a comment</h3>
   <%= simple_form_for [@review, Comment.new] do |f| %>
-  <%= f.input :body %>
+  <%= f.input :body, placeholder: "Type your comment", class: "comment-input" %>
   <%= f.button :submit, "Add comment" %>
 <% end %>

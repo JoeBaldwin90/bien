@@ -5,32 +5,46 @@
   @extend %box;
 
   h2 {
-    font-size: 32px;
-    font-weight: 600;
-    margin-top: -10px;
+    @extend %pageTitle;
+    margin-top: 5px;
+  }
+  p {
+    @extend %copySmall;
   }
 }
 
 h2.card-title {
-  color: $yellow;
-  margin-bottom: 20px;
+  @extend %copyLarge;
 }
 
 .body {
   p {
     color: $green;
     margin-bottom: 10px;
+    padding: 25px;
   }
 }
 
 .score {
   @extend %diamond-sm;
   @extend %flex-v-center;
-  margin: 20px auto;
+  margin: 15px auto;
 
   p {
     @extend %pop;
     pointer-events: none;
+  }
+}
+
+.qualities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  p {
+    color: $green;
+    &:first-child {
+      font-weight: 500;
+    }
   }
 }
 
@@ -55,21 +69,42 @@ h2.card-title {
 }
 
 .comment {
-  width: 600px;
-  margin: 0 auto;
-  margin-bottom: 25px;
+  width: 650px;
+  margin: 0 auto 25px;
   padding: 10px;
   text-align: left;
   border-left: 2px solid $green;
 
   p {
-    font-size: 16px;
-    color: $yellow;
+    @extend %copySmall;
   }
 
   .posted {
     font-size: 12px;
     text-align: right;
     opacity: 0.5;
+  }
+}
+
+.new_comment {
+  max-width: 650px;
+  margin: 0 auto;
+  label.text.required {
+    display: none;
+  }
+  #comment_body {
+    @extend %copySmall;
+    text-align: left;
+    background-color: $blue;
+    border-bottom: 1px solid $yellow;
+    width: 100%;
+  }
+  input.btn {
+    @extend %pop;
+    @extend %diamond-sm;
+    font-size: 16px;
+    height: 50px;
+    width: 175px;
+    margin-top: 20px;
   }
 }

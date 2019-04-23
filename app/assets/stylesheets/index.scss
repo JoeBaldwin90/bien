@@ -1,5 +1,6 @@
 @import "global.scss"; // Extended
-// Index start
+// Add Review button
+
 nav.add-review {
   .diamond-lg {
     @extend %diamond-lg;
@@ -12,6 +13,47 @@ nav.add-review {
     padding: 30px;
   }
 }
+// Filters
+
+.filters {
+  @extend %flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 10px;
+
+  li {
+    display: inline;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  > form,
+  > ul {
+    width: 33%;
+  }
+}
+
+.location input {
+  @extend %copySmall;
+  color: $green;
+  font-weight: 400;
+  padding: 0;
+  border-bottom: 1px solid $yellow;
+
+  &:hover {
+    background: #00000047;
+  }
+
+  &:focus {
+    background: #00000047;
+  }
+}
+// Reviews
 
 .review {
   @extend %box;
@@ -27,7 +69,7 @@ nav.add-review {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   &:hover {
@@ -39,9 +81,4 @@ nav.add-review {
     font-size: 12px;
     margin: -15px auto;
   }
-}
-
-.location input {
-  background: #00000047;
-  padding: 5px;
 }
