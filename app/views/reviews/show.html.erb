@@ -64,6 +64,6 @@
 
   <h3>Add a comment</h3>
   <%= simple_form_for [@review, Comment.new] do |f| %>
-  <%= f.input :body, placeholder: "Type your comment", class: "comment-input" %>
-  <%= f.button :submit, "Add comment" %>
+    <%= f.input :body, placeholder: "Type your comment", class: "comment-input" %>
+    <%= f.button :submit, "Add comment" %>
 <% end %>

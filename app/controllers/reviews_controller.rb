@@ -16,10 +16,10 @@ class ReviewsController < ApplicationController
 
     # Filter by cuisine
     if @cuisine.present?
-      @reviews = @reviews.where(cuisine: @cuisine) # @price is the variable parameter
+      @reviews = @reviews.where(cuisine: @cuisine) # @cuisine is the variable parameter
     end
 
-    # Search near location
+    # Filter & search by location
     if @location.present?
       @reviews = @reviews.near(@location)
     end
@@ -38,9 +38,9 @@ class ReviewsController < ApplicationController
     # Check if the model can be saved.
     # If it is, navigate to homepage.
     # If no, show the new form.
-  if @review.save
-    # If the form data passes the validation checks on our review.db model, redirect to homepage.
-    redirect_to root_path
+    if @review.save
+      # If the form data passes the validation checks on our review.db model, redirect to homepage.
+      redirect_to root_path
     else
     # Else show the view for new.html.erb (the form)
       render "new"
