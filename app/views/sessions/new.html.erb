@@ -1,0 +1,9 @@
+<h2>Log into Bien Reviews</h2>
+
+<%= simple_form_for :session, :url sessions_path do |f| %>
+
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.button :submit, "Log in" %>
+
+<% end %>
