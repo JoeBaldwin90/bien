@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # this allows us to use all of the methods "show/index/new/create" etc. run: $ rails routes
   resources :users
 
-  resources :sessions
+  resource :sessions
 
   root "reviews#index"
 
