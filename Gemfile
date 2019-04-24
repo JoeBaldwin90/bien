@@ -47,6 +47,9 @@ gem "simple_form"
 # Add active link (removes need for lots of if statements)
 gem 'active_link_to'
 
+# Add profanity filter
+gem "profanity_filter"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
