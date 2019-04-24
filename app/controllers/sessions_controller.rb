@@ -21,7 +21,6 @@ class SessionsController < ApplicationController
       # Save this user to the user's "session" which is a hash built into Rails
       session[:user_id] = @user.id
 
-
       redirect_to root_path
     else
       render "new"

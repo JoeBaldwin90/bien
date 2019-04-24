@@ -18,9 +18,12 @@ class UsersController < ApplicationController
     @user = User.new(form_params)
 
     # Check if the user can be saved.
-    # If it is, navigate to homepage.
+    # If it is, save session & navigate to homepage.
     # If no, show the new form.
     if @user.save
+      # Save session with user
+      session[:user_id] = @user.id
+
       # If the form data passes the validation checks in the user.rb model, redirect to list of users.
       redirect_to users_path
     else
