@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def index
 
     # Start with all Users
-    @user = User.all
+    @users = User.all
 
   end
 
