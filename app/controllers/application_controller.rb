@@ -14,6 +14,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Check login status
+  def check_login
+    if session[:user_id].present?
+      # All good. Do nothing.
+    else
+      redirect_to new_session_path
+    end
+  end
+
 
 
 end

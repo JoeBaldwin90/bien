@@ -1,5 +1,9 @@
 class ReviewsController < ApplicationController
 
+  # Check if logged in
+  before_action :check_login, except: [:index, :show]
+
+
   def index
     # Add a filters for price, cuisine & location.
     # This can be done in the URL e.g. "..:3000/location=London"
