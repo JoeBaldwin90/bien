@@ -2,13 +2,8 @@
 <!-- Add review button (only visible to logged in users) -->
 <% if session[:user_id].present? %>
   <nav class="add-review">
-    <li class="diamond-lg center"><%= link_to "Add a review!", new_review_path %></li> <!-- Add review -->
+    <li class="diamond-lg center"><%= link_to "Add a review!", new_review_path %></li>
   </nav>
-  <%= link_to "Log out", session_path, method: :delete %> <!-- Log out -->
-<% else %>
-  <%= link_to "Sign up", new_user_path %>  <!-- Sign up -->
-  or
-  <%= link_to "Log in", new_session_path %> <!-- Log in -->
 <% end %>
 
 <!-- Filters -->
