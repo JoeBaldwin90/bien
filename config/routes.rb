@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # this allows us to use all of the methods "show/index/new/create" etc. run: $ rails routes
   resources :users
 
-  resource :sessions
+  # Use singular as there can only be one session per user. One log in, one log out. 
+  resource :session
 
   root "reviews#index"
 

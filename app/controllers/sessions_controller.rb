@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     # Try to log-in
-    @form_data = params.require(:sessions)
+    @form_data = params.require(:session)
 
     # Pull username and password from the form form dta
     @username = @form_data[:username]
@@ -31,7 +31,11 @@ class SessionsController < ApplicationController
 
   def destroy
     # Log-out
+    # Remove session completely "reset_session" is built into Rails
+    reset_session
 
+    # Redirect to login page
+    redirect_to new_session_path 
   end
 
 end
