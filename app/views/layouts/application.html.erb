@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <% if session[:user_id].present? %>
+      <% if is_logged_in? %>
         <!-- Show username -->
         <%= @current_user.username %>
         <!-- Log out -->
