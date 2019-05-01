@@ -11,5 +11,8 @@ class User < ApplicationRecord
     validates :password, presence: true, length: { minimum: 7 }
     validates :password_confirmation, presence: true, length: { minimum: 7 }
 
+    def to_param
+      username
+    end
 
 end

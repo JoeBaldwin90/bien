@@ -7,6 +7,12 @@ class UsersController < ApplicationController
 
   end
 
+  def show
+    # Vanity URL to hide number of users
+    @user = User.find_by(username: params[:id])
+
+  end
+
   def new
     # form for adding a new user
     @user = User.new
