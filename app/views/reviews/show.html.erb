@@ -2,19 +2,29 @@
 
   <div class="show-card">
 
-    <h1><%= @review.restaurant %></h1>
+    <h1>
+      <%= @review.restaurant %>
+    </h1>
 
     <% if @review.address.present? %>
       <%= simple_format @review.address %>
     <% end %>
 
-    <h2><%= @review.cuisine %></h2>
+    <h2>
+      <%= @review.cuisine %>
+    </h2>
 
     <div class="score">
-      <p><%= @review.score %>
-        / 10</p>
+      <p>
+        <%= @review.score %>
+        / 10
+      </p>
     </div>
-    <h2 class="card-title"><%= @review.title %></h2>
+
+    <h2 class="card-title">
+      <%= @review.title %>
+    </h2>
+
     <div class="body">
       <%= simple_format @review.body %>
     </div>
@@ -22,30 +32,53 @@
     <div class="qualities">
       <div class="ambiance half">
         <% if @review.ambiance.present? %>
-          <p>Ambiance:</p>
-          <p><%= @review.ambiance %></p>
+          <p>
+            Ambiance:
+          </p>
+          <p>
+            <%= @review.ambiance %>
+          </p>
         <% end %>
       </div>
 
       <div class="price half">
         <% if @review.price.present? %>
           <div class="price">
-            <p>Price:</p>
-            <p><%= @review.price %>
-            / £££</p>
+            <p>
+              Price:
+            </p>
+            <p>
+              <%= @review.price %>
+              / £££
+            </p>
           </div>
         <% end %>
       </div>
 
-
     </div>
 
     <div class="actions">
-      <p class="modify"><%= link_to "Edit this review", edit_review_path(@review) %></p>
-      <p class="modify"><%= link_to "Delete this review", review_path(@review), method: :delete, data: { confirm: "Are you sure??" } %></p>
+      <p class="modify">
+        <%= link_to "Edit this review", edit_review_path(@review) %>
+      </p>
+      <p class="posted">
+        Written by
+        <% if @review.user.present? %>
+          <%= @review.user.username %>
+        <% else %>
+          Anon
+        <% end %>
+        </p>
+      <p class="modify">
+        <%= link_to "Delete this review", review_path(@review), method: :delete, data: { confirm: "Are you sure??" } %>
+      </p>
     </div>
 
   </div>
+
+  <!------------------------>
+  <!--- Comments section --->
+  <!------------------------>
 
   <% if @review.comments.present? %>
     <h3>Comments</h3>
@@ -63,7 +96,7 @@
           <% else %>
             Anon
           <% end %>
-          </p>
+        </p>
       </div>
 
     <% end %>
@@ -71,6 +104,6 @@
 
   <h3>Add a comment</h3>
   <%= simple_form_for [@review, Comment.new] do |f| %>
-    <%= f.input :body, placeholder: "Type your comment", class: "comment-input" %>
-    <%= f.button :submit, "Add comment" %>
+  <%= f.input :body, placeholder: "Type your comment", class: "comment-input" %>
+  <%= f.button :submit, "Add comment" %>
 <% end %>
