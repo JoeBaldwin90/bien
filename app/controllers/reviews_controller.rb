@@ -64,8 +64,12 @@ class ReviewsController < ApplicationController
   def destroy
     #find review
     @review = Review.find(params[:id])
-    # delete review
-    @review.destroy
+
+    # delete review if user ID matches the review author ID
+    if @review.user == @current_user
+      @review.destroy
+    end
+
     #redirect to homepage
     redirect_to root_path
   end
@@ -73,16 +77,26 @@ class ReviewsController < ApplicationController
   def edit
     # find review
     @review = Review.find(params[:id])
+
+    # Use if statement to prevent users hacking the URL and editing reviews they haven't written.
+    if @review.user != @current_user
+      redirect_to root_path
+    end
+
   end
 
   def update
-    # find review
+    # Find review
     @review = Review.find(params[:id])
 
-    if @review.update(form_params) # If no errors, update with new info
-      redirect_to review_path(@review) #Redirect to show
+    if @review.user != @current_user
+      redirect_to root_path
     else
-      render "edit" #show edit page
+      if @review.update(form_params) # If no errors, update with new info
+        redirect_to review_path(@review) #Redirect to show
+      else
+        render "edit" # Show edit page
+      end
     end
   end
 
