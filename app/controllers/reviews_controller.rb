@@ -39,6 +39,10 @@ class ReviewsController < ApplicationController
     # take info from form and add to model
     @review = Review.new(form_params)
 
+    # assign review to the current user
+    @review.user = @current_user
+
+
     # Check if the model can be saved.
     # If it is, navigate to homepage.
     # If no, show the new form.
