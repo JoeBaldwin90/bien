@@ -58,52 +58,61 @@
     </div>
 
     <div class="actions">
-      <p class="modify">
-        <%= link_to "Edit this review", edit_review_path(@review) %>
-      </p>
+      <!-- Modify link only available to singed-in users -->
+      <% if @review.user == @current_user %>
+        <p class="modify">
+          <%= link_to "Edit this review", edit_review_path(@review) %>
+        </p>
+      <% end %>
+
       <p class="posted">
         Written by
         <% if @review.user.present? %>
-          <%= @review.user.username %>
+          <%= link_to @review.user.username, user_path(@review.user) %>
         <% else %>
           Anon
         <% end %>
+      </p>
+
+      <!-- Modify link only available to singed-in users -->
+      <% if @review.user == @current_user %>
+        <p class="modify">
+          <%= link_to "Delete this review", review_path(@review), method: :delete, data: { confirm: "Are you sure??" } %>
         </p>
-      <p class="modify">
-        <%= link_to "Delete this review", review_path(@review), method: :delete, data: { confirm: "Are you sure??" } %>
+      <% end %>
+    </div>
+
+
+</div>
+
+<!------------------------>
+<!--- Comments section --->
+<!------------------------>
+
+<% if @review.comments.present? %>
+  <h3>Comments</h3>
+
+  <% @review.comments.order("created_at desc").each do |comment| %>
+
+    <div class="comment">
+      <%= simple_format comment.body %>
+      <p class="posted">Posted
+        <%= time_ago_in_words comment.created_at %>
+        ago</p>
+      <p class="posted">by
+        <% if comment.user.present? %>
+          <%= link_to comment.user.username, user_path(comment.user) %>
+        <% else %>
+          Anon
+        <% end %>
       </p>
     </div>
 
-  </div>
-
-  <!------------------------>
-  <!--- Comments section --->
-  <!------------------------>
-
-  <% if @review.comments.present? %>
-    <h3>Comments</h3>
-
-    <% @review.comments.order("created_at desc").each do |comment| %>
-
-      <div class="comment">
-        <%= simple_format comment.body %>
-        <p class="posted">Posted
-          <%= time_ago_in_words comment.created_at %>
-          ago</p>
-        <p class="posted">by
-          <% if comment.user.present? %>
-            <%= link_to comment.user.username, user_path(comment.user) %>
-          <% else %>
-            Anon
-          <% end %>
-        </p>
-      </div>
-
-    <% end %>
   <% end %>
+<% end %>
 
-  <h3>Add a comment</h3>
-  <%= simple_form_for [@review, Comment.new] do |f| %>
-  <%= f.input :body, placeholder: "Type your comment", class: "comment-input" %>
-  <%= f.button :submit, "Add comment" %>
+<h3>Add a comment</h3>
+<%= simple_form_for [@review, Comment.new] do |f| %>
+<%= f.input :body, placeholder: "Type your comment", class: "comment-input" %>
+<%= f.button :submit, "Add comment" %>
 <% end %>
