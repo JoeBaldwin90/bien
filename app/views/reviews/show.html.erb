@@ -74,6 +74,12 @@
         <% end %>
       </p>
 
+      <p class="posted">
+        <% if is_logged_in? %>
+          <%= link_to "Bookmark", review_bookmark_path(@review), method: :post %>
+        <% end %>
+      </p>
+
       <!-- Modify link only available to singed-in users -->
       <% if @review.user == @current_user %>
         <p class="modify">
