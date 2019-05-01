@@ -1,5 +1,9 @@
 class User < ApplicationRecord
 
+    # A user has a 1-to-many relationship with reviews and comments
+    has_many :reviews
+    has_many :comments
+
     has_secure_password
 
     validates :username, presence: true, uniqueness: true
