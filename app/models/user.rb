@@ -1,8 +1,9 @@
 class User < ApplicationRecord
 
-    # A user has a 1-to-many relationship with reviews and comments
+    # A user has a 1-to-many relationship with reviews, comments & bookmarks
     has_many :reviews
     has_many :comments
+    has_many :bookmarks
 
     has_secure_password
 

@@ -2,11 +2,14 @@
 
 class Review < ApplicationRecord
 
-  # Review has a 1-to-many relationship with comments
+  # Review has a 1-to-many relationship with comments & bookmarks
   has_many :comments
+  has_many :bookmarks
 
   # Review belongs to a single user
   belongs_to :user
+
+
 
   geocoded_by :address
   after_validation :geocode
