@@ -53,6 +53,9 @@ gem "profanity_filter"
 # Add carrierwave file uploading
 gem 'carrierwave', '~> 1.0'
 
+# Add mini magick as suggested by Rails error message
+gem "mini_magick"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
