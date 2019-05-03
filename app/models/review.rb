@@ -9,10 +9,11 @@ class Review < ApplicationRecord
   # Review belongs to a single user
   belongs_to :user
 
-
-
   geocoded_by :address
   after_validation :geocode
+
+  # Add photo uploader
+  mount_uploader :photo, PhotoUploader
 
   validates :restaurant, presence: true
   validates :title, presence: true #this is a hash, also valid is { presence: true }
