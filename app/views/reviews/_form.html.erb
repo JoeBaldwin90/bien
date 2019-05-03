@@ -1,16 +1,10 @@
-<%= form_for @review do |f| %>
-
-<% if @review.errors.any? %>
-
-  <div class="errors">
+<div class="errors">
     <ul>
       <% @review.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
   </div>
-
-<% end %>
 
 <%= simple_form_for @review do |f| %>
   <%= f.input :restaurant, placeholder: "Restaurant name", :maxlength => 25 %>
@@ -23,7 +17,4 @@
   <%= f.input :ambiance, placeholder: "e.g. Buzzing" %>
   <%= f.input :photo %>
   <%= f.button :submit, class: "submit-button", value: "Save Review" %>
-<% end %>
-
-
 <% end %>
