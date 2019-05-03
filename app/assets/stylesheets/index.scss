@@ -76,9 +76,16 @@ nav.add-review {
     background-color: #10495C;
   }
 
+  .thumb {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    text-align: center;
+  }
+
   .counter {
     opacity: 0.5;
     font-size: 12px;
-    margin: -15px auto;
+    margin: -15px 15px;
   }
 }
