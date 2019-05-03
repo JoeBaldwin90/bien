@@ -63,7 +63,7 @@
       <!-- Modify link only available to singed-in users -->
       <% if @review.user == @current_user %>
         <!-- Edit link only available if review is less than 60min old -->
-        <% if @review.created_at > 1.hour.ago %>
+        <% if @review.created_at > 1.day.ago %>
           <p class="modify">
             <%= link_to "Edit this review", edit_review_path(@review) %>
           </p>

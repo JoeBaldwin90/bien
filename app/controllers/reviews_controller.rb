@@ -81,7 +81,7 @@ class ReviewsController < ApplicationController
     # Use if statement to prevent users hacking the URL and editing reviews they haven't written.
     if @review.user != @current_user
       redirect_to root_path
-    elsif @review.created_at < 1.hour.ago
+    elsif @review.created_at < 1.day.ago
       redirect_to review_path(@review)
     end
 

@@ -43,18 +43,18 @@
   <div class="review">
     <%= link_to review_path(review) do %>
 
-    <div class="restaurant third">
+    <div class="restaurant forty">
       <h2>Restaurant</h2>
       <p class="large"><%= review.restaurant %></p>
     </div>
 
-    <div class="cuisine third">
+    <div class="cuisine forty">
       <h2>Cuisine</h2>
       <p class="large"><%= review.cuisine %></p>
     </div>
 
-    <div class="thumb third">
-      <div><%= image_tag review.photo.thumb.to_s %></div>
+    <div class="twenty">
+      <div lass="thumb"><%= image_tag review.photo.thumb.to_s %></div>
     </div>
 
     <p class="counter"><%= pluralize review.comments.count, "comment" %>

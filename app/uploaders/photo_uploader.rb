@@ -12,7 +12,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Medium size image - doesn't work because of the ".to_s" problem on line 32 on the reveiw show page.
   version :medium do
-   process resize_to_fill: [400,300]
+   process resize_to_fill: [450,300]
   end
 
   # Resize medium image into thumbnails
