@@ -8,11 +8,16 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # storage :fog
 
   # Size to fit max width & height
-  process resize_to_fit: [1200, 600]
+  process resize_to_fit: [800, 600]
 
-  # Resize thumbnails
-  version :thumb do
-    process resize_to_fill: [150,150]
+  # Medium size image - doesn't work because of the ".to_s" problem on line 32 on the reveiw show page.
+  version :medium do
+   process resize_to_fill: [400,300]
+  end
+
+  # Resize medium image into thumbnails
+  version :thumb, from_version: :medium do
+    process resize_to_fill: [100, 100]
   end
 
   # Override the directory where uploaded files will be stored.
