@@ -21,6 +21,7 @@
   <%= f.input :price, as: :radio_buttons, collection: [['£', '£'], ['££', '££'], ['£££', '£££']], label_method: :first, value_method: :second %>
   <%= f.input :score, placeholder: "0-10", class: "score-input" %>
   <%= f.input :ambiance, placeholder: "e.g. Buzzing" %>
+  <%= f.input :photo %>
   <%= f.button :submit, class: "submit-button", value: "Save Review" %>
 <% end %>
 
