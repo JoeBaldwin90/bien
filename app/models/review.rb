@@ -3,8 +3,8 @@
 class Review < ApplicationRecord
 
   # Review has a 1-to-many relationship with comments & bookmarks
-  has_many :comments
-  has_many :bookmarks
+  has_many :comments, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   # Review belongs to a single user
   belongs_to :user
