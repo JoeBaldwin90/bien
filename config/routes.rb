@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # Use singular as there can only be one session per user. One log in, one log out.
   resource :session
 
+  get "about", to: "pages#about"
+
   root "reviews#index"
 
 
