@@ -17,9 +17,10 @@
         <%= @current_user.username %>
         <!-- Log out -->
         <br/><%= link_to "Log out", session_path, method: :delete %>
-          <% if @current_user.is_admin? %>
-            <%= link_to "Admin", admin_root_path %>
-          <% end %>
+        <!-- If admin, link to admin page -->
+        <% if @current_user.is_admin? %>
+          <%= link_to "Admin", admin_root_path %>
+        <% end %>
       <% else %>
         <!-- Sign up -->
         <%= link_to "Sign up", new_user_path %>
