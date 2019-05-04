@@ -33,20 +33,20 @@ class ApplicationController < ActionController::Base
 
   # Check Admin status
   def check_admin
-    @user = find_current_cuser
+    @current_user = find_current_cuser
 
-    unless @user.present? and @user.is_admin?
+    unless @current_user.present? and @current_user.is_admin?
       redirect_to root_path
     end
   end
 
   # Find admin users
   def find_admin_user
-    @user = find_current_cuser
+    @current_user = find_current_cuser
 
     if @current_user.present? and @current_user.is_admin?
       @current_user
-    else 
+    else
       nil
     end
   end
