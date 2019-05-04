@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resource :session
 
   get "about", to: "pages#about"
+  get "terms", to: "pages#terms"
 
   root "reviews#index"
 

@@ -4,4 +4,8 @@ class PagesController < ApplicationController
     @content = Page.find_by(url: "about")
   end
 
+  def terms
+    @content = Page.find_by(url: "terms")
+  end
+
 end
