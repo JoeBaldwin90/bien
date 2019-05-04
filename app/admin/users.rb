@@ -14,7 +14,7 @@ permit_params :username, :email, :real_name, :password, :password_confirmation, 
 
 # From stackoverflow "active user to_param override"
 controller do
-    resources_configuration[:self][:finder] = :find_by_title
+    resources_configuration[:self][:finder] = :find_by_username
 end
 
 end
