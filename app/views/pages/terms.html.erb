@@ -1,3 +1,7 @@
 <h1><%= @content.title %></h1>
 
 <p><%= simple_format @content.body %></p>
+
+<% if @content.image.present? %>
+  <div><%= image_tag @content.image.to_s %></div>
+<% end %>
