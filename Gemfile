@@ -38,6 +38,14 @@ gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+# Active Admin dashboard
+gem 'activeadmin'
+# Plus integrations with:
+gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
+
 # Add in Geocoding
 gem "geocoder"
 
