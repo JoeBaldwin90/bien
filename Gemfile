@@ -56,6 +56,9 @@ gem 'carrierwave', '~> 1.0'
 # Add mini magick as suggested by Rails error message
 gem "mini_magick"
 
+# Amazon S3 (AWS) image hosting
+gem "fog-aws"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
