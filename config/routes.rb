@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get "about", to: "pages#about"
   get "terms", to: "pages#terms"
 
-  root "reviews#index"
+  root "pages#home"
 
 
 
