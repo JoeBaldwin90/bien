@@ -7,7 +7,7 @@
     @extend %pageTitle;
   }
 
-  input {
+  div.input {
     @extend %copyRegular;
     margin-bottom: 20px;
   }
@@ -37,16 +37,5 @@
     label {
       @extend %copyRegular;
     }
-  }
-}
-
-.btn.submit-button {
-  @extend %diamond-sm;
-  @extend %flex-v-center;
-  @extend %pop;
-  margin: 10px auto;
-
-  &:hover {
-    background-color: $yellow;
   }
 }

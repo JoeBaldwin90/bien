@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get "about", to: "pages#about"
   get "terms", to: "pages#terms"
+  get "reviews", to: "reviews#index"
 
   root "pages#home"
 

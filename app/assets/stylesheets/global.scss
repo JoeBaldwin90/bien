@@ -235,9 +235,48 @@ textarea:hover {
   background-color: #10495C;
 }
 
-// Homepage 
+// Homepage
 .main-image img {
   max-width: 600px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.button,
+input.button {
+  margin: 10px auto;
+  padding: 10px;
+  border: solid 2px $blue;
+  border-bottom-width: 5px;
+  width: 200px;
+  background-color: $teal;
+  text-align: center;
+  border-radius: 10px;
+  color: blue;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  color: $yellow;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+
+   a {
+    color: $yellow;
+    font-weight: 200;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+   }
+   &:hover {
+     -webkit-transform: translateY(3px);
+             transform: translateY(3px);
+     border-bottom-width: 2px;
+     margin-bottom: 13px;
+   }
+}
+
+.button.add-review {
+  margin-top: 40px;
+}
+
+input.button {
+  border-color: #10495C;
 }
