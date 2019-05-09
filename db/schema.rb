@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_145307) do
+ActiveRecord::Schema.define(version: 2019_05_09_145049) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_05_04_145307) do
     t.float "longitude"
     t.integer "user_id"
     t.string "photo"
+    t.boolean "is_featured", default: false
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
