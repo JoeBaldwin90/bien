@@ -15,7 +15,7 @@ class Review < ApplicationRecord
   # Add photo uploader
   mount_uploader :photo, PhotoUploader
 
-  validates :restaurant, presence: true
+  validates_presence_of :restaurant
   validates :title, presence: true #this is a hash, also valid is { presence: true }
   validates :body, length: { minimum: 10 }
   validates :score, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 10 }

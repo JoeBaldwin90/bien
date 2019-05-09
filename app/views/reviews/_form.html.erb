@@ -1,10 +1,8 @@
-<div class="errors">
-    <ul>
-      <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
+<!--- Custom error messages
+<% @review.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+<% end %> --->
+
 
 <%= simple_form_for @review do |f| %>
   <%= f.input :restaurant, placeholder: "Restaurant name", :maxlength => 25 %>
