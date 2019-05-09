@@ -12,6 +12,8 @@ class User < ApplicationRecord
     validates :password, on: :create, presence: true, length: { minimum: 7 }
     validates :password_confirmation, on: :create, presence: true, length: { minimum: 7 }
 
+    mount_uploader :photo, AvatarUploader
+
     def to_param
       username
     end

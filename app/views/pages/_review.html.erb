@@ -1,5 +1,5 @@
 <p>
-  <%= link_to review.restaurant, review_path(review) %> (<%= review.score %>/10,rated by
+  <%= link_to review.restaurant, review_path(review) %> (<%= review.score %>/10, rated by
   <% if review.user.present? %>
     <%= review.user.username %>)
   <% else %>
