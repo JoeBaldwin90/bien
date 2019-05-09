@@ -12,33 +12,33 @@
 
   <body>
     <header>
-      <% if is_logged_in? %>
-        <!-- Show username -->
-        <%= @current_user.username %>
-        <!-- Log out -->
-        <br/><%= link_to "Log out", session_path, method: :delete %>
-        <!-- If admin, link to admin page -->
-        <% if @current_user.is_admin? %>
-          <%= link_to "Admin", admin_root_path %>
-        <% end %>
-      <% else %>
-        <!-- Sign up -->
-        <%= link_to "Sign up", new_user_path %>
-        or
-        <!-- Log in -->
-        <%= link_to "Log in", new_session_path %>
-      <% end %>
-
-      <nav class="logo center">
+      <nav class="logo">
         <h1>
-          <%= link_to root_path do %>
+          <%= link_to reviews_path do %>
           <%= image_tag "bien-logo.svg" %>
         <% end %>
       </h1>
     </nav>
-    <div class="tagline center">
-      <p>The best restaurant reviews in the world</p>
-    </div>
+
+    <div class="login">
+        <% if is_logged_in? %>
+          <!-- Show username -->
+          <p class="small"><%= @current_user.username %></p>
+          <!-- Log out -->
+          <p class="small"><%= link_to "Log out", session_path, method: :delete %></p>
+          <!-- If admin, link to admin page -->
+          <% if @current_user.is_admin? %>
+            <p class="small"><%= link_to "Admin", admin_root_path %></p>
+          <% end %>
+        <% else %>
+
+          <!-- Sign up -->
+          <p class="small"><%= link_to "Sign up", new_user_path %></p>
+          or
+          <!-- Log in -->
+          <p class="small"><%= link_to "Log in", new_session_path %></p>
+        <% end %>
+      </div>
 
   </header>
 

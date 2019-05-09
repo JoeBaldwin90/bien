@@ -1,15 +1,3 @@
-nav.add-review {
-  .diamond-lg {
-    @extend %diamond-lg;
-    @extend %flex-v-center;
-    margin-bottom: 50px;
-  }
-
-  a {
-    @extend %pop;
-    padding: 30px;
-  }
-}
 // Filters
 
 .filters {

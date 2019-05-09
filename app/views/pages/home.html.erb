@@ -1,6 +1,6 @@
 <p class="button"><%= link_to "See all reviews", reviews_path %></p>
 
-<h1><%= @content.title %></h1>
+<h2><%= @content.title %></h2>
 
 <p><%= simple_format @content.body %></p>
 
@@ -8,8 +8,14 @@
   <div class="main-image"><%= image_tag @content.image.to_s %></div>
 <% end %>
 
-<h2>Highly rated reviews</h2>
-<%= render partial: "review", collection: @highly_rated_reviews %>
+<div class="review_highlights">
+  <div class="half">
+    <h2>Highly rated reviews</h2>
+    <p><%= render partial: "review", collection: @highly_rated_reviews %></p>
+  </div>
+  <div class="half">
+    <h2>Featured reviews</h2>
+    <p><%= render partial: "review", collection: @featured_reviews %></p>
+  </div>
 
-<h2>Featured reviews</h2>
-<%= render partial: "review", collection: @featured_reviews %>
+</div>

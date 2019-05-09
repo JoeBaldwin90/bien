@@ -27,6 +27,12 @@
     height: 250px;
   }
 
+  span.error {
+      font-size: 14px;
+      display: block;
+      color: $red;
+  }
+
   .radio {
     display: inline-block;
     margin-right: 10px;

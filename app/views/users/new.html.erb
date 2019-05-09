@@ -13,11 +13,11 @@
 <% end %>
 
 <%= simple_form_for @user do |f| %>
-  <%= f.input :username %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
-  <%= f.input :real_name %>
-  <%= f.input :photo %>
-  <%= f.button :submit, class: "submit-button", value: "Sign-up" %>
+  <%= f.input :username, placeholder: 'Username', label: false%>
+  <%= f.input :email, placeholder: 'Email', label: false %>
+  <%= f.input :password, placeholder: 'Password', label: false %>
+  <%= f.input :password_confirmation, placeholder: 'Confirm password', label: false %>
+  <%= f.input :real_name, placeholder: 'Real name', label: false %>
+  <%= f.input :photo, placeholder: 'Upoload avatar', label: false %>
+  <%= f.button :submit, class: "button", value: "Sign-up" %>
 <% end %>

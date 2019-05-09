@@ -3,8 +3,8 @@
 
 <%= simple_form_for :session, url: session_path do |f| %>
 
-  <%= f.input :username %>
-  <%= f.input :password %>
-  <%= f.button :submit, "Log in" %>
+  <%= f.input :username, placeholder: 'Username', label: false %>
+  <%= f.input :password, placeholder: 'Password', label: false %>
+  <%= f.button :submit, "Log in", class: 'button' %>
 
 <% end %>

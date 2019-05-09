@@ -147,6 +147,28 @@ body {
   }
 }
 
+header {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  max-width: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+    img {
+      max-width: 120px;
+    }
+    .login p {
+      display: inline;
+      margin-left: 10px;
+    }
+}
+
 h1 {
   @extend %pageTitle-lg;
   line-height: 1;
@@ -185,6 +207,7 @@ p.large {
 
 p.small {
   @extend %copySmall;
+  margin-bottom: 10px;
 }
 
 .logo {
@@ -213,26 +236,35 @@ textarea {
   padding: 10px;
   text-align: center;
   @include transform(0.5s);
+  border-radius: 10px;
+  margin: 10px;
+  border-bottom: solid 2px $blue;
 }
+
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  font-style: italic;
+  color: $yellow;
+  opacity: 0.5;
 }
+
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  font-style: italic;
+  color: $yellow;
+  opacity: 0.5;
 }
+
 
 input::placeholder,
 textarea::placeholder {
-  font-style: italic;
+  color: $yellow;
+  opacity: 0.5;
 }
 
 input:hover,
 textarea:hover {
-  background-color: #10495C;
+  background-color: $blue;
 }
 
 // Homepage
@@ -248,7 +280,7 @@ input.button {
   padding: 10px;
   border: solid 2px $blue;
   border-bottom-width: 5px;
-  width: 200px;
+  width: 250px;
   background-color: $teal;
   text-align: center;
   border-radius: 10px;
@@ -266,8 +298,8 @@ input.button {
     text-shadow: 0 1px 0 rgba(0,0,0,0.2);
    }
    &:hover {
-     -webkit-transform: translateY(3px);
-             transform: translateY(3px);
+     -webkit-transform: translateY(2px);
+             transform: translateY(2px);
      border-bottom-width: 2px;
      margin-bottom: 13px;
    }
@@ -275,8 +307,36 @@ input.button {
 
 .button.add-review {
   margin-top: 40px;
+  &:hover {
+    margin-top: 43px;
+  }
 }
 
 input.button {
   border-color: #10495C;
+}
+
+#review_photo,
+#user_photo {
+  font-size: 12px;
+}
+
+.review_highlights {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    max-width: 900px;
+    margin: 0 auto;
+
+    .half {
+      padding: 20px;
+    }
+
+    h2 {
+      font-style: normal;
+      border-bottom: 2px solid $blue;
+      margin-bottom: 15px;
+    }
 }

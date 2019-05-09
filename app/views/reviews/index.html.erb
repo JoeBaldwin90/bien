@@ -58,7 +58,7 @@
 
 <!-- Add review button (only visible to logged in users) -->
 <% if session[:user_id].present? %>
-  <div class="button add-review">
+  <p class="button add-review">
     <%= link_to "Add a review!", new_review_path %>
-  </div>
+  </p>
 <% end %>
