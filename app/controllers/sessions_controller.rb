@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     if @user
       # Save this user to the user's "session" which is a hash built into Rails
       session[:user_id] = @user.id
-
+      flash[:success] = "Welcome back" 
       redirect_to root_path
     else
       render "new"
@@ -34,8 +34,10 @@ class SessionsController < ApplicationController
     # Remove session completely "reset_session" is built into Rails
     reset_session
 
+    flash[:success] = "You've logged out!"
+
     # Redirect to login page
-    redirect_to new_session_path 
+    redirect_to new_session_path
   end
 
 end

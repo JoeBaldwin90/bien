@@ -48,7 +48,9 @@ class ReviewsController < ApplicationController
     # If no, show the new form.
     if @review.save
       # If the form data passes the validation checks on our review.db model, redirect to homepage.
-      redirect_to root_path
+      redirect_to reviews_path
+
+      flash[:success] = "Thanks for your review!"
     else
     # Else show the view for new.html.erb (the form)
       render "new"
@@ -68,10 +70,11 @@ class ReviewsController < ApplicationController
     # delete review if user ID matches the review author ID
     if @review.user == @current_user
       @review.destroy
+      flash[:success] = "Your review has been deleted"
     end
 
     #redirect to homepage
-    redirect_to root_path
+    redirect_to reviews_path
   end
 
   def edit
@@ -92,7 +95,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     if @review.user != @current_user
-      redirect_to root_path
+      redirect_to reviews_path
     else
       if @review.update(form_params) # If no errors, update with new info
         redirect_to review_path(@review) #Redirect to show

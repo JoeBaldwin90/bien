@@ -30,6 +30,8 @@ class UsersController < ApplicationController
       # Save session with user
       session[:user_id] = @user.id
 
+      flash[:success] = "Welcome to Bien"
+
       # If the form data passes the validation checks in the user.rb model, redirect to list of users.
       redirect_to reviews_path
     else
