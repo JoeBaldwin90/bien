@@ -340,3 +340,12 @@ input.button {
       margin-bottom: 15px;
     }
 }
+
+.success {
+  width: 350px;
+  padding: 10px;
+  background: $green;;
+  color: $yellow;
+  margin: 10px auto;
+  border-radius: 10px;
+}

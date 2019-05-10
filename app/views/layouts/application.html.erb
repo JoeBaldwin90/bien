@@ -30,6 +30,7 @@
           <% if @current_user.is_admin? %>
             <p class="small"><%= link_to "Admin", admin_root_path %></p>
           <% end %>
+          <p class="small"><%= link_to "Edit account", edit_account_path %></p>
         <% else %>
 
           <!-- Sign up -->
@@ -41,6 +42,12 @@
       </div>
 
   </header>
+
+  <% if flash[:success].present? %>
+    <div class="success">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
 
   <main>
     <%= yield %>
