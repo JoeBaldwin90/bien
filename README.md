@@ -38,10 +38,22 @@ All reviews are geolocated according to the address that is entered by the user 
 
 
 ## Process
+I started by designing a hypothetical client proposal and started to think about the code that I'd need for each feature, what data I needed in my models and how they related to each other. 
 
+Then I generated my review model, controller and set up the resources needed for my review routes. I made the index view for the reviews my root view. I then wrote the CRUD code in my reviews controller and added some validations to my form parameters. 
+
+Since restaurant reviews are likely to be shared I added some SEO friendly URLs and custom page titles. 
+
+Next I added geolocation for the reviews which required me to add an address, latitude and longitude column to my review model. 
+
+Review filters came next so users can search by price, cuisine and location. 
+
+Once I was happy with my reviews I generated a comments model, which belongs to the review model. As such, the resources for the comments were nested in the review resources. 
+
+Once the user and comments were set up I had to think about my users. I installed the Bcrypt gem to secure my users passwords. I then set up sessions for users when they login and built a user profile view. 
 
 ## Challenges
-
+Understanding the relationships between my users, reviews, comments and bookmarks was probably the most difficult thing about this project. On paper the relationships seem simple, but I had trouble translating this into code
 
 ## Wins
 Showing different routes for logged-in and Admin users. Although it's relatively simple code once the sessions are set up, it was an exciting breakthrough for my first project: 
@@ -53,5 +65,5 @@ Showing different routes for logged-in and Admin users. Although it's relatively
 
 
 ## Future development
-
+Much better styling. I'm planning to resett all of my CSS and build this app for mobile-first using bootstrap.  
  
