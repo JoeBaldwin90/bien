@@ -38,6 +38,10 @@ gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+# Frontend
+gem 'webpacker'
+gem 'react-rails'
+
 # Active Admin dashboard
 gem 'activeadmin'
 # Plus integrations with:
