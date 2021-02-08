@@ -59,7 +59,7 @@ gem 'active_link_to'
 gem "profanity_filter"
 
 # Add carrierwave file uploading
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 
 # Add mini magick as suggested by Rails error message
 gem "mini_magick"
